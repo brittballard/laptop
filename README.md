@@ -52,7 +52,7 @@ Clone onto laptop:
 
 ```
 export LAPTOP="$HOME/laptop"
-git clone https://github.com/croaky/laptop.git $LAPTOP
+git clone https://github.com/brittballard/laptop.git $LAPTOP
 cd $LAPTOP
 ```
 
