@@ -32,6 +32,8 @@ vim.opt.tabstop = 2
 vim.opt.textwidth = 80
 vim.opt.timeoutlen = 300
 vim.opt.updatetime = 300
+vim.opt.writebackup = false
+vim.opt.number = true
 
 -- Use Lazy for plugins
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -581,3 +583,14 @@ hi WarningMsg            guifg=#d7005f
 hi @diff.plus            guifg=#64c88e
 hi @text.diff.add        guifg=#64c88e
 ]])
+
+-- Automatically remove search highlight after the search is done
+vim.api.nvim_create_autocmd("CmdlineLeave", {
+	pattern = { "/", "?" },
+	command = "set nohlsearch",
+})
+
+vim.api.nvim_create_autocmd("CmdlineEnter", {
+	pattern = { "/", "?" },
+	command = "set hlsearch",
+})
