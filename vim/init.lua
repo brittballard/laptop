@@ -40,6 +40,7 @@ vim.opt.termguicolors = true
 vim.opt.textwidth = 80
 vim.opt.updatetime = 300
 vim.opt.writebackup = false
+vim.opt.number = true
 
 -- Packages
 vim.cmd([[packadd packer.nvim]])
@@ -536,3 +537,14 @@ hi WarningMsg            guifg=#d7005f
 hi @diff.plus            guifg=#64c88e
 hi @text.diff.add        guifg=#64c88e
 ]])
+
+-- Automatically remove search highlight after the search is done
+vim.api.nvim_create_autocmd("CmdlineLeave", {
+	pattern = { "/", "?" },
+	command = "set nohlsearch",
+})
+
+vim.api.nvim_create_autocmd("CmdlineEnter", {
+	pattern = { "/", "?" },
+	command = "set hlsearch",
+})
