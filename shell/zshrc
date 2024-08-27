@@ -42,6 +42,16 @@ autoload -U up-line-or-beginning-search
 zle -N up-line-or-beginning-search
 bindkey '^[[A' up-line-or-beginning-search # Up arrow
 
+# Bind Down Arrow to search history forward based on input
+autoload -U down-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey '^[[B' down-line-or-beginning-search # Down arrow
+
+# Bind Down Arrow to search history forward based on input
+autoload -U down-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey '^[[B' down-line-or-beginning-search # Down arrow
+
 # Bind Ctrl-R to fuzzy search through history
 bindkey '^r' fzf-history-widget
 
