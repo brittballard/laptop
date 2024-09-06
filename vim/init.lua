@@ -309,7 +309,6 @@ lspconfig.solargraph.setup({
 })
 filetype_autocmd("ruby", function()
 	run_file("bundle exec ruby %")
-	format_on_save("cat % | bundle exec rubocop --stderr --stdin % --autocorrect --format quiet")
 
 	-- https://github.com/testdouble/standard/wiki/IDE:-vim
 	vim.g.ruby_indent_assignment_style = "variable"
