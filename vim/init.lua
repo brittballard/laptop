@@ -397,7 +397,6 @@ vim.api.nvim_create_autocmd("FileType", {
 	pattern = "ruby",
 	callback = function()
 		run_file("<Leader>r", "bundle exec ruby %", "split")
-		format_on_save("cat % | bundle exec rubocop --stderr --stdin % --autocorrect --format quiet")
 
 		-- https://github.com/testdouble/standard/wiki/IDE:-vim
 		vim.g.ruby_indent_assignment_style = "variable"
